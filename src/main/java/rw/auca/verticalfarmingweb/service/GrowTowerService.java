@@ -1,7 +1,10 @@
 package rw.auca.verticalfarmingweb.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import rw.auca.verticalfarmingweb.entity.Grower;
 import rw.auca.verticalfarmingweb.entity.GrowTower;
+import rw.auca.verticalfarmingweb.repository.GrowerRepository;
 import rw.auca.verticalfarmingweb.repository.GrowTowerRepository;
 
 import java.util.List;
@@ -12,9 +15,11 @@ import java.util.UUID;
 public class GrowTowerService {
 // Create variable for accessing grow tower repository
     private final GrowTowerRepository growTowerRepository;
+    private final GrowerRepository growerRepository;
 
-    public GrowTowerService(GrowTowerRepository growTowerRepository) {
+    public GrowTowerService(GrowTowerRepository growTowerRepository, GrowerRepository growerRepository) {
         this.growTowerRepository = growTowerRepository;
+        this.growerRepository = growerRepository;
     }
 //CRUD method implimentation
 //Insert 
@@ -49,6 +54,16 @@ public class GrowTowerService {
         }
         growTowerRepository.deleteById(id);
         return "Grow tower deleted successfully";
+    }
+//Delete all
+    @Transactional
+    public String deleteAll() {
+        growerRepository.findAll().forEach(grower -> {
+            grower.setGrowTower(null);
+            growerRepository.save(grower);
+        });
+        growTowerRepository.deleteAll();
+        return "All grow towers deleted successfully";
     }
 //Search free tower
     public List<GrowTower> findFreeTowers() {

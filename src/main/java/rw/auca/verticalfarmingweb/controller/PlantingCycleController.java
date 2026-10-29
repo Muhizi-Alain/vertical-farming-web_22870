@@ -113,6 +113,11 @@ public class PlantingCycleController {
         return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
 
+    @DeleteMapping("/delete-all")
+    public ResponseEntity<String> deleteAll() {
+        return new ResponseEntity<>(plantingCycleService.deleteAll(), HttpStatus.OK);
+    }
+
     @PatchMapping("/{id}/status")
     public ResponseEntity<String> updateStatus(@PathVariable UUID id, @RequestParam CycleStatus status) {
         String message = plantingCycleService.updateStatus(id, status);

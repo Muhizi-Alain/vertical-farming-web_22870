@@ -6,6 +6,7 @@ import DetailPanel from '../components/DetailPanel'
 import PlantingCycleForm from '../components/PlantingCycleForm'
 import StatusActions from '../components/StatusActions'
 import StatusBadge from '../components/StatusBadge'
+import DeleteAllButton from '../components/DeleteAllButton'
 import TableActions from '../components/TableActions'
 
 export default function PlantingCyclesPage() {
@@ -70,6 +71,15 @@ export default function PlantingCyclesPage() {
     const response = await api(`/api/planting-cycles/${id}/status?status=${status}`, { method: 'PATCH' })
     setResult(response)
     load(pageNumber)
+  }
+
+  async function removeAll() {
+    const response = await api('/api/planting-cycles/delete-all', { method: 'DELETE' })
+    setResult(response)
+    if (response.status === 200) {
+      setEditCycle(null)
+      load(pageNumber)
+    }
   }
 
   async function remove(cycle) {
@@ -150,6 +160,9 @@ export default function PlantingCyclesPage() {
         subtitle={`Page ${pageNumber + 1} of ${page?.totalPages ?? 0} · ${page?.totalElements ?? 0} total`}
         isEmpty={rows.length === 0}
         emptyMessage="No planting cycles on this page."
+        headerActions={
+          <DeleteAllButton label="planting cycles" onDelete={removeAll} disabled={(page?.totalElements ?? 0) === 0} />
+        }
       >
         <thead>
           <tr>

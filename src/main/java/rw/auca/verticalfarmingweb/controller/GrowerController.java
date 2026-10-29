@@ -78,6 +78,11 @@ public class GrowerController {
         return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
 
+    @DeleteMapping("/delete-all")
+    public ResponseEntity<String> deleteAll() {
+        return new ResponseEntity<>(growerService.deleteAll(), HttpStatus.OK);
+    }
+
     @PutMapping("/{growerId}/crop-families/{cropFamilyId}")
     public ResponseEntity<String> addCropFamily(@PathVariable UUID growerId, @PathVariable UUID cropFamilyId) {
         String message = growerService.addCropFamily(growerId, cropFamilyId);

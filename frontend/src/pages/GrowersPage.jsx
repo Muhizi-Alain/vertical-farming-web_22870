@@ -3,6 +3,7 @@ import { api } from '../api/client'
 import Alert from '../components/Alert'
 import DataTable from '../components/DataTable'
 import DetailPanel from '../components/DetailPanel'
+import DeleteAllButton from '../components/DeleteAllButton'
 import TableActions from '../components/TableActions'
 import CropFamilyPicker from '../components/CropFamilyPicker'
 
@@ -93,6 +94,15 @@ export default function GrowersPage() {
       phone: row.phone,
     })
     setDetail(null)
+  }
+
+  async function removeAll() {
+    const response = await api('/api/growers/delete-all', { method: 'DELETE' })
+    setResult(response)
+    if (response.status === 200) {
+      setEditForm(null)
+      load()
+    }
   }
 
   async function remove(row) {
@@ -237,7 +247,13 @@ export default function GrowersPage() {
         <button type="submit">Move tower</button>
       </form>
       {free.length > 0 && <p className="info-banner">Free towers: {free.map((tower) => tower.towerNumber).join(', ')}</p>}
-      <DataTable title="Grower roster" subtitle={`${rows.length} growers`} isEmpty={rows.length === 0} emptyMessage="No growers yet.">
+      <DataTable
+        title="Grower roster"
+        subtitle={`${rows.length} growers`}
+        isEmpty={rows.length === 0}
+        emptyMessage="No growers yet."
+        headerActions={<DeleteAllButton label="growers" onDelete={removeAll} disabled={rows.length === 0} />}
+      >
         <thead>
           <tr>
             <th>Name</th>

@@ -3,6 +3,7 @@ import { api } from '../api/client'
 import Alert, { shouldShowAlert } from '../components/Alert'
 import DataTable from '../components/DataTable'
 import DetailPanel from '../components/DetailPanel'
+import DeleteAllButton from '../components/DeleteAllButton'
 import TableActions from '../components/TableActions'
 
 export default function HarvestRecordsPage() {
@@ -70,6 +71,15 @@ export default function HarvestRecordsPage() {
     ])
   }
 
+  async function removeAll() {
+    const response = await api('/api/harvest-records/delete-all', { method: 'DELETE' })
+    setResult(response)
+    if (response.status === 200) {
+      setHistory([])
+      setDetail(null)
+    }
+  }
+
   async function remove(record) {
     if (!window.confirm('Delete this harvest record?')) {
       return
@@ -135,6 +145,7 @@ export default function HarvestRecordsPage() {
         subtitle={history.length > 0 ? `${history.length} records loaded` : 'Load by batch code to read records'}
         isEmpty={history.length === 0}
         emptyMessage="No harvest records to display yet."
+        headerActions={<DeleteAllButton label="harvest records" onDelete={removeAll} />}
       >
         <thead>
           <tr>

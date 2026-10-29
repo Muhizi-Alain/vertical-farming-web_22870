@@ -227,6 +227,10 @@ select {
 }
 
 .table-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
   padding: 0.9rem 1rem 0.2rem;
 }
 

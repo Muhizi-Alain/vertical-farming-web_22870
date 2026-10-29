@@ -3,6 +3,7 @@ import { api } from '../api/client'
 import Alert from '../components/Alert'
 import DataTable from '../components/DataTable'
 import DetailPanel from '../components/DetailPanel'
+import DeleteAllButton from '../components/DeleteAllButton'
 import TableActions from '../components/TableActions'
 
 export default function GrowTowersPage() {
@@ -57,6 +58,15 @@ export default function GrowTowersPage() {
     setDetail(null)
   }
 
+  async function removeAll() {
+    const response = await api('/api/grow-towers/delete-all', { method: 'DELETE' })
+    setResult(response)
+    if (response.status === 200) {
+      resetForm()
+      load()
+    }
+  }
+
   async function remove(row) {
     if (!window.confirm(`Delete grow tower ${row.towerNumber}?`)) {
       return
@@ -102,7 +112,13 @@ export default function GrowTowersPage() {
           Free towers: {free.map((tower) => `Tower ${tower.towerNumber} (${tower.name})`).join(', ')}
         </p>
       )}
-      <DataTable title="Tower inventory" subtitle={`${sorted.length} towers`} isEmpty={sorted.length === 0} emptyMessage="No grow towers yet.">
+      <DataTable
+        title="Tower inventory"
+        subtitle={`${sorted.length} towers`}
+        isEmpty={sorted.length === 0}
+        emptyMessage="No grow towers yet."
+        headerActions={<DeleteAllButton label="grow towers" onDelete={removeAll} disabled={sorted.length === 0} />}
+      >
         <thead>
           <tr>
             <th className="col-num">Number</th>

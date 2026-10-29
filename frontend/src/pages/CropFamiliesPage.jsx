@@ -3,6 +3,7 @@ import { api } from '../api/client'
 import Alert from '../components/Alert'
 import DataTable from '../components/DataTable'
 import DetailPanel from '../components/DetailPanel'
+import DeleteAllButton from '../components/DeleteAllButton'
 import TableActions from '../components/TableActions'
 
 export default function CropFamiliesPage() {
@@ -55,6 +56,15 @@ export default function CropFamiliesPage() {
     setDetail(null)
   }
 
+  async function removeAll() {
+    const response = await api('/api/crop-families/delete-all', { method: 'DELETE' })
+    setResult(response)
+    if (response.status === 200) {
+      resetForm()
+      load()
+    }
+  }
+
   async function remove(row) {
     if (!window.confirm(`Delete crop family "${row.name}"?`)) {
       return
@@ -92,7 +102,13 @@ export default function CropFamiliesPage() {
       {unused.length > 0 && (
         <p className="info-banner">Unused families: {unused.map((family) => family.name).join(', ')}</p>
       )}
-      <DataTable title="All crop families" subtitle={`${rows.length} registered`} isEmpty={rows.length === 0} emptyMessage="No crop families yet.">
+      <DataTable
+        title="All crop families"
+        subtitle={`${rows.length} registered`}
+        isEmpty={rows.length === 0}
+        emptyMessage="No crop families yet."
+        headerActions={<DeleteAllButton label="crop families" onDelete={removeAll} disabled={rows.length === 0} />}
+      >
         <thead>
           <tr>
             <th>Name</th>

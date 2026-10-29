@@ -94,6 +94,13 @@ public class PlantingCycleService {
         plantingCycleRepository.delete(found.get());
         return "Planting cycle deleted successfully";
     }
+//Delete all
+    @Transactional
+    public String deleteAll() {
+        harvestRecordRepository.deleteAll();
+        plantingCycleRepository.deleteAll();
+        return "All planting cycles deleted successfully";
+    }
 //Search plantingcycle status
     public List<PlantingCycle> findByStatus(CycleStatus status) {
         return plantingCycleRepository.findByStatusOrderByPlantingDateAsc(status);

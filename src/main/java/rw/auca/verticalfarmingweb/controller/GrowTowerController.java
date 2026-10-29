@@ -72,4 +72,9 @@ public class GrowTowerController {
         }
         return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
+
+    @DeleteMapping("/delete-all")
+    public ResponseEntity<String> deleteAll() {
+        return new ResponseEntity<>(growTowerService.deleteAll(), HttpStatus.OK);
+    }
 }

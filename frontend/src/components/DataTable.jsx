@@ -1,8 +1,15 @@
-export default function DataTable({ title, subtitle, isEmpty, emptyMessage, children }) {
+export default function DataTable({ title, subtitle, isEmpty, emptyMessage, headerActions, children }) {
   if (isEmpty) {
     return (
       <section className="table-shell table-shell-empty">
-        {title && <h3 className="table-title">{title}</h3>}
+        {(title || headerActions) && (
+          <header className="table-header">
+            <div>
+              {title && <h3 className="table-title">{title}</h3>}
+            </div>
+            {headerActions}
+          </header>
+        )}
         <p>{emptyMessage || 'No records to show yet.'}</p>
       </section>
     )
@@ -10,10 +17,13 @@ export default function DataTable({ title, subtitle, isEmpty, emptyMessage, chil
 
   return (
     <section className="table-shell">
-      {(title || subtitle) && (
+      {(title || subtitle || headerActions) && (
         <header className="table-header">
-          {title && <h3 className="table-title">{title}</h3>}
-          {subtitle && <p className="table-subtitle">{subtitle}</p>}
+          <div>
+            {title && <h3 className="table-title">{title}</h3>}
+            {subtitle && <p className="table-subtitle">{subtitle}</p>}
+          </div>
+          {headerActions}
         </header>
       )}
       <div className="table-scroll">
