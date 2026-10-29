@@ -1,0 +1,1501 @@
+{
+  "info": {
+    "_postman_id": "93235ab8-6a85-41a1-8c9c-4a8dace1ecf7",
+    "name": "vertical-farming-web",
+    "description": "Vertical Farming Web API (localhost:22870). Set collection variables after seeding via Env \u00b7 List IDs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:22870"
+    },
+    {
+      "key": "badId",
+      "value": "00000000-0000-0000-0000-000000000099"
+    },
+    {
+      "key": "familyLeafyId",
+      "value": ""
+    },
+    {
+      "key": "familyHerbsId",
+      "value": ""
+    },
+    {
+      "key": "familyMicroId",
+      "value": ""
+    },
+    {
+      "key": "familyBerryId",
+      "value": ""
+    },
+    {
+      "key": "tower1Id",
+      "value": ""
+    },
+    {
+      "key": "tower2Id",
+      "value": ""
+    },
+    {
+      "key": "tower3Id",
+      "value": ""
+    },
+    {
+      "key": "tower4Id",
+      "value": ""
+    },
+    {
+      "key": "growerAlineId",
+      "value": ""
+    },
+    {
+      "key": "growerEricId",
+      "value": ""
+    },
+    {
+      "key": "growerDianeId",
+      "value": ""
+    },
+    {
+      "key": "batchLet07Id",
+      "value": ""
+    },
+    {
+      "key": "batchLet11Id",
+      "value": ""
+    },
+    {
+      "key": "batchBasId",
+      "value": ""
+    },
+    {
+      "key": "batchMicId",
+      "value": ""
+    },
+    {
+      "key": "batchSpnId",
+      "value": ""
+    },
+    {
+      "key": "cycleHarvestedId",
+      "value": ""
+    },
+    {
+      "key": "cyclePlannedId",
+      "value": ""
+    },
+    {
+      "key": "harvestId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "00 Seed",
+      "item": [
+        {
+          "name": "1 \u00b7 Families & towers",
+          "item": [
+            {
+              "name": "Family \u00b7 Leafy",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-families/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Leafy Greens\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Family \u00b7 Herbs",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-families/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Herbs\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Family \u00b7 Micro",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-families/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Microgreens\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Family \u00b7 Berry",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-families/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Strawberries\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Tower \u00b7 1",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/grow-towers/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"towerNumber\": 1,\n  \"name\": \"Tower 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Tower \u00b7 2",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/grow-towers/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"towerNumber\": 2,\n  \"name\": \"Tower 2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Tower \u00b7 3",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/grow-towers/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"towerNumber\": 3,\n  \"name\": \"Tower 3\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Tower \u00b7 4",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/grow-towers/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"towerNumber\": 4,\n  \"name\": \"Tower 4\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "description": "Run on empty DB. Then GET /all for families and towers; paste ids into the environment."
+        },
+        {
+          "name": "2 \u00b7 Growers batches cycles",
+          "item": [
+            {
+              "name": "Grower \u00b7 Aline",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/growers/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstName\": \"Aline\",\n  \"lastName\": \"Uwase\",\n  \"phone\": \"0788000001\",\n  \"growTower\": {\n    \"id\": \"{{tower1Id}}\"\n  },\n  \"cropFamilies\": [\n    {\n      \"id\": \"{{familyLeafyId}}\"\n    },\n    {\n      \"id\": \"{{familyHerbsId}}\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Grower \u00b7 Eric",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/growers/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstName\": \"Eric\",\n  \"lastName\": \"Mugisha\",\n  \"phone\": \"0788000002\",\n  \"growTower\": {\n    \"id\": \"{{tower2Id}}\"\n  },\n  \"cropFamilies\": [\n    {\n      \"id\": \"{{familyHerbsId}}\"\n    },\n    {\n      \"id\": \"{{familyMicroId}}\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Grower \u00b7 Diane",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/growers/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstName\": \"Diane\",\n  \"lastName\": \"Keza\",\n  \"phone\": \"0788000003\",\n  \"growTower\": {\n    \"id\": \"{{tower3Id}}\"\n  },\n  \"cropFamilies\": [\n    {\n      \"id\": \"{{familyLeafyId}}\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Batch \u00b7 LET-07",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-batches/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cropName\": \"Lettuce\",\n  \"variety\": \"Butterhead\",\n  \"batchCode\": \"LET-2026-07\",\n  \"supplier\": \"GreenSupply\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Batch \u00b7 LET-11",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-batches/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cropName\": \"Lettuce\",\n  \"variety\": \"Romaine\",\n  \"batchCode\": \"LET-2026-11\",\n  \"supplier\": \"GreenSupply\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Batch \u00b7 BAS-02",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-batches/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cropName\": \"Basil\",\n  \"variety\": \"Genovese\",\n  \"batchCode\": \"BAS-2026-02\",\n  \"supplier\": \"HerbCo\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Batch \u00b7 MIC-04",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-batches/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cropName\": \"Radish\",\n  \"variety\": \"Daikon\",\n  \"batchCode\": \"MIC-2026-04\",\n  \"supplier\": \"MicroCo\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Batch \u00b7 SPN-01",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-batches/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cropName\": \"Spinach\",\n  \"variety\": \"Bloomsdale\",\n  \"batchCode\": \"SPN-2026-01\",\n  \"supplier\": \"GreenSupply\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cycle \u00b7 1 HARVESTED",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-10-05\",\n  \"status\": \"HARVESTED\",\n  \"trays\": 12,\n  \"cropBatch\": {\n    \"id\": \"{{batchLet07Id}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerAlineId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cycle \u00b7 2 FAILED",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-10-12\",\n  \"status\": \"FAILED\",\n  \"trays\": 8,\n  \"cropBatch\": {\n    \"id\": \"{{batchSpnId}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerDianeId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cycle \u00b7 3 PLANNED",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-10-20\",\n  \"status\": \"PLANNED\",\n  \"trays\": 10,\n  \"cropBatch\": {\n    \"id\": \"{{batchLet07Id}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerAlineId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cycle \u00b7 4 FAILED same day",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-10-20\",\n  \"status\": \"FAILED\",\n  \"trays\": 9,\n  \"cropBatch\": {\n    \"id\": \"{{batchLet07Id}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerAlineId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cycle \u00b7 5 GROWING",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-10-28\",\n  \"status\": \"GROWING\",\n  \"trays\": 14,\n  \"cropBatch\": {\n    \"id\": \"{{batchMicId}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerEricId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cycle \u00b7 6 PLANNED",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-11-02\",\n  \"status\": \"PLANNED\",\n  \"trays\": 11,\n  \"cropBatch\": {\n    \"id\": \"{{batchLet11Id}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerEricId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cycle \u00b7 7 GROWING",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-11-04\",\n  \"status\": \"GROWING\",\n  \"trays\": 7,\n  \"cropBatch\": {\n    \"id\": \"{{batchBasId}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerEricId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cycle \u00b7 8 HARVESTED",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-11-06\",\n  \"status\": \"HARVESTED\",\n  \"trays\": 16,\n  \"cropBatch\": {\n    \"id\": \"{{batchBasId}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerDianeId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cycle \u00b7 9 PLANNED",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-11-10\",\n  \"status\": \"PLANNED\",\n  \"trays\": 13,\n  \"cropBatch\": {\n    \"id\": \"{{batchLet07Id}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerAlineId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cycle \u00b7 10 GROWING",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-11-15\",\n  \"status\": \"GROWING\",\n  \"trays\": 15,\n  \"cropBatch\": {\n    \"id\": \"{{batchLet11Id}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerDianeId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "description": "Requires family*Id, tower*Id, then batch*Id and grower*Id for cycle saves."
+        }
+      ],
+      "description": "Full recommended dataset from the exam doc."
+    },
+    {
+      "name": "Env \u00b7 List IDs",
+      "item": [
+        {
+          "name": "Families",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/crop-families/all",
+            "description": ""
+          }
+        },
+        {
+          "name": "Towers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/grow-towers/all",
+            "description": ""
+          }
+        },
+        {
+          "name": "Growers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/growers/all",
+            "description": ""
+          }
+        },
+        {
+          "name": "Batches",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/crop-batches/all",
+            "description": ""
+          }
+        },
+        {
+          "name": "Cycles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/all",
+            "description": ""
+          }
+        }
+      ],
+      "description": "Use responses to fill environment variables before D\u2013E demos."
+    },
+    {
+      "name": "A \u00b7 CRUD",
+      "item": [
+        {
+          "name": "Families",
+          "item": [
+            {
+              "name": "Save",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-families/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Demo Family\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "List",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/api/crop-families/all",
+                "description": ""
+              }
+            },
+            {
+              "name": "Get",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/api/crop-families/{{familyLeafyId}}",
+                "description": ""
+              }
+            },
+            {
+              "name": "Update",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-families/update/{{familyLeafyId}}",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Leafy Greens\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Delete 404",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{baseUrl}}/api/crop-families/delete/{{badId}}",
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Towers",
+          "item": [
+            {
+              "name": "Save",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/grow-towers/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"towerNumber\": 99,\n  \"name\": \"Temp\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "List",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/api/grow-towers/all",
+                "description": ""
+              }
+            },
+            {
+              "name": "Get",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/api/grow-towers/{{tower1Id}}",
+                "description": ""
+              }
+            },
+            {
+              "name": "Update",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/grow-towers/update/{{tower1Id}}",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"towerNumber\": 1,\n  \"name\": \"Tower 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Delete 404",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{baseUrl}}/api/grow-towers/delete/{{badId}}",
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Growers",
+          "item": [
+            {
+              "name": "Save",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/growers/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"User\",\n  \"phone\": \"0788000099\",\n  \"growTower\": {\n    \"id\": \"{{tower4Id}}\"\n  },\n  \"cropFamilies\": [\n    {\n      \"id\": \"{{familyLeafyId}}\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "List",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/api/growers/all",
+                "description": ""
+              }
+            },
+            {
+              "name": "Get",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/api/growers/{{growerAlineId}}",
+                "description": ""
+              }
+            },
+            {
+              "name": "Update",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/growers/update/{{growerAlineId}}",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstName\": \"Aline\",\n  \"lastName\": \"Uwase\",\n  \"phone\": \"0788000001\",\n  \"growTower\": {\n    \"id\": \"{{tower1Id}}\"\n  },\n  \"cropFamilies\": [\n    {\n      \"id\": \"{{familyLeafyId}}\"\n    },\n    {\n      \"id\": \"{{familyHerbsId}}\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Delete 404",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{baseUrl}}/api/growers/delete/{{badId}}",
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Batches",
+          "item": [
+            {
+              "name": "Save",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-batches/save",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cropName\": \"Kale\",\n  \"variety\": \"Curly\",\n  \"batchCode\": \"KAL-2026-99\",\n  \"supplier\": \"Demo\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "List",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/api/crop-batches/all",
+                "description": ""
+              }
+            },
+            {
+              "name": "Get",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/api/crop-batches/{{batchLet07Id}}",
+                "description": ""
+              }
+            },
+            {
+              "name": "Update",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/crop-batches/update/{{batchLet07Id}}",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cropName\": \"Lettuce\",\n  \"variety\": \"Butterhead\",\n  \"batchCode\": \"LET-2026-07\",\n  \"supplier\": \"GreenSupply\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Delete 404",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{baseUrl}}/api/crop-batches/delete/{{badId}}",
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cycles",
+          "item": [
+            {
+              "name": "Save future",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/save",
+                "description": "409 if grower already has a cycle that date (non-FAILED).",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-12-01\",\n  \"status\": \"PLANNED\",\n  \"trays\": 5,\n  \"cropBatch\": {\n    \"id\": \"{{batchLet07Id}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerAlineId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "List",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/api/planting-cycles/all",
+                "description": ""
+              }
+            },
+            {
+              "name": "Get",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{baseUrl}}/api/planting-cycles/{{cyclePlannedId}}",
+                "description": ""
+              }
+            },
+            {
+              "name": "Update",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{baseUrl}}/api/planting-cycles/update/{{cyclePlannedId}}",
+                "description": "",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plantingDate\": \"2026-12-02\",\n  \"status\": \"PLANNED\",\n  \"trays\": 6,\n  \"cropBatch\": {\n    \"id\": \"{{batchLet07Id}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerAlineId}}\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Delete 404",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{baseUrl}}/api/planting-cycles/delete/{{badId}}",
+                "description": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "B \u00b7 Derived",
+      "item": [
+        {
+          "name": "Batches by name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/crop-batches/by-crop-name?cropName=lettuce",
+            "description": ""
+          }
+        },
+        {
+          "name": "Batches \u00b7 no match",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/crop-batches/by-crop-name?cropName=mango",
+            "description": ""
+          }
+        },
+        {
+          "name": "Cycles by status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/by-status?status=PLANNED",
+            "description": ""
+          }
+        },
+        {
+          "name": "Cycles in range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/between?start=2026-10-01&end=2026-10-31",
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "C \u00b7 JPQL",
+      "item": [
+        {
+          "name": "Growers by family",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/growers/by-crop-family?name=leafy",
+            "description": ""
+          }
+        },
+        {
+          "name": "Free towers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/grow-towers/free",
+            "description": ""
+          }
+        },
+        {
+          "name": "Unused families",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/crop-families/unused",
+            "description": ""
+          }
+        },
+        {
+          "name": "Grower batches",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/crop-batches/of-grower/{{growerEricId}}",
+            "description": ""
+          }
+        },
+        {
+          "name": "Grower batches 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/crop-batches/of-grower/{{badId}}",
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "D \u00b7 Rules",
+      "item": [
+        {
+          "name": "Status \u2192 GROWING",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/{{cyclePlannedId}}/status?status=GROWING",
+            "description": ""
+          }
+        },
+        {
+          "name": "Status illegal",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/{{cycleHarvestedId}}/status?status=PLANNED",
+            "description": ""
+          }
+        },
+        {
+          "name": "Add crop family",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": "{{baseUrl}}/api/growers/{{growerEricId}}/crop-families/{{familyBerryId}}",
+            "description": ""
+          }
+        },
+        {
+          "name": "Add family 409",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": "{{baseUrl}}/api/growers/{{growerAlineId}}/crop-families/{{familyLeafyId}}",
+            "description": ""
+          }
+        },
+        {
+          "name": "Change tower",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": "{{baseUrl}}/api/growers/{{growerAlineId}}/grow-tower?towerNumber=4",
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "E \u00b7 Harvest",
+      "item": [
+        {
+          "name": "Save",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/harvest-records/save?plantingCycleId={{cycleHarvestedId}}",
+            "description": "",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"qualityGrade\": \"Grade A\",\n  \"notes\": \"Crisp leaves, no pests\",\n  \"kilograms\": 18\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Save not harvested",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/harvest-records/save?plantingCycleId={{cyclePlannedId}}",
+            "description": "",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"qualityGrade\": \"B\",\n  \"notes\": \"n/a\",\n  \"kilograms\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "List by batch code",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/harvest-records/crop-batch/LET-2026-07",
+            "description": ""
+          }
+        },
+        {
+          "name": "List unknown code",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/harvest-records/crop-batch/NO-SUCH",
+            "description": ""
+          }
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/harvest-records/delete/{{harvestId}}",
+            "description": ""
+          }
+        },
+        {
+          "name": "Delete cycle blocked",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/delete/{{cycleHarvestedId}}",
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "F \u00b7 Reports",
+      "item": [
+        {
+          "name": "Count by status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/stats/by-status",
+            "description": ""
+          }
+        },
+        {
+          "name": "Cancel day",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/cancel-day?growerId={{growerAlineId}}&date=2026-10-20",
+            "description": "Run after other demos; marks non-HARVESTED cycles FAILED."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bonus",
+      "item": [
+        {
+          "name": "Dashboard",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/dashboard/summary",
+            "description": ""
+          }
+        },
+        {
+          "name": "Paged cycles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/page?page=0&size=5&sort=plantingDate,desc",
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "Errors",
+      "item": [
+        {
+          "name": "Family 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/crop-families/{{badId}}",
+            "description": ""
+          }
+        },
+        {
+          "name": "Cycle 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/{{badId}}",
+            "description": ""
+          }
+        },
+        {
+          "name": "Past plant date",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/planting-cycles/save",
+            "description": "",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"plantingDate\": \"2020-01-01\",\n  \"status\": \"PLANNED\",\n  \"trays\": 1,\n  \"cropBatch\": {\n    \"id\": \"{{batchLet07Id}}\"\n  },\n  \"grower\": {\n    \"id\": \"{{growerAlineId}}\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Harvest cycle 404",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{baseUrl}}/api/harvest-records/save?plantingCycleId={{badId}}",
+            "description": "",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"qualityGrade\": \"A\",\n  \"notes\": \"\",\n  \"kilograms\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
