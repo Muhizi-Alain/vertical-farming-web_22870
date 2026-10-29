@@ -72,4 +72,9 @@ public class CropFamilyController {
         }
         return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
+
+    @DeleteMapping("/delete-all")
+    public ResponseEntity<String> deleteAll() {
+        return new ResponseEntity<>(cropFamilyService.deleteAll(), HttpStatus.OK);
+    }
 }

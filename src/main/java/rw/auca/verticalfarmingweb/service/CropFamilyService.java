@@ -62,6 +62,18 @@ public class CropFamilyService {
         cropFamilyRepository.delete(cropFamily);
         return "Crop family deleted successfully";
     }
+//Delete all
+    @Transactional
+    public String deleteAll() {
+        for (CropFamily cropFamily : cropFamilyRepository.findAll()) {
+            for (Grower grower : new ArrayList<>(cropFamily.getGrowers())) {
+                grower.getCropFamilies().remove(cropFamily);
+                growerRepository.save(grower);
+            }
+        }
+        cropFamilyRepository.deleteAll();
+        return "All crop families deleted successfully";
+    }
 //Search Unsused cropfamily
     public List<CropFamily> findUnused() {
         return cropFamilyRepository.findUnused();

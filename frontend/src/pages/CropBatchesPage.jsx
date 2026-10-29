@@ -3,6 +3,7 @@ import { api } from '../api/client'
 import Alert, { shouldShowAlert } from '../components/Alert'
 import DataTable from '../components/DataTable'
 import DetailPanel from '../components/DetailPanel'
+import DeleteAllButton from '../components/DeleteAllButton'
 import TableActions from '../components/TableActions'
 
 const emptyForm = { cropName: '', variety: '', batchCode: '', supplier: '' }
@@ -61,6 +62,16 @@ export default function CropBatchesPage() {
       supplier: row.supplier,
     })
     setDetail(null)
+  }
+
+  async function removeAll() {
+    const response = await api('/api/crop-batches/delete-all', { method: 'DELETE' })
+    setResult(response)
+    if (response.status === 200) {
+      resetForm()
+      setMatches(null)
+      load()
+    }
   }
 
   async function remove(row) {
@@ -135,7 +146,13 @@ export default function CropBatchesPage() {
             : `Matches: ${matches.map((batch) => `${batch.variety} (${batch.batchCode})`).join(', ')}`}
         </p>
       )}
-      <DataTable title="Registered batches" subtitle={`${rows.length} batches`} isEmpty={rows.length === 0} emptyMessage="No crop batches yet.">
+      <DataTable
+        title="Registered batches"
+        subtitle={`${rows.length} batches`}
+        isEmpty={rows.length === 0}
+        emptyMessage="No crop batches yet."
+        headerActions={<DeleteAllButton label="crop batches" onDelete={removeAll} disabled={rows.length === 0} />}
+      >
         <thead>
           <tr>
             <th>Batch code</th>

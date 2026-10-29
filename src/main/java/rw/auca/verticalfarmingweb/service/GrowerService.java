@@ -8,6 +8,8 @@ import rw.auca.verticalfarmingweb.entity.Grower;
 import rw.auca.verticalfarmingweb.repository.CropFamilyRepository;
 import rw.auca.verticalfarmingweb.repository.GrowTowerRepository;
 import rw.auca.verticalfarmingweb.repository.GrowerRepository;
+import rw.auca.verticalfarmingweb.repository.HarvestRecordRepository;
+import rw.auca.verticalfarmingweb.repository.PlantingCycleRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +22,15 @@ public class GrowerService {
     private final GrowerRepository growerRepository;
     private final GrowTowerRepository growTowerRepository;
     private final CropFamilyRepository cropFamilyRepository;
+    private final PlantingCycleRepository plantingCycleRepository;
+    private final HarvestRecordRepository harvestRecordRepository;
 
-    public GrowerService(GrowerRepository growerRepository, GrowTowerRepository growTowerRepository, CropFamilyRepository cropFamilyRepository) {
+    public GrowerService(GrowerRepository growerRepository, GrowTowerRepository growTowerRepository, CropFamilyRepository cropFamilyRepository, PlantingCycleRepository plantingCycleRepository, HarvestRecordRepository harvestRecordRepository) {
         this.growerRepository = growerRepository;
         this.growTowerRepository = growTowerRepository;
         this.cropFamilyRepository = cropFamilyRepository;
+        this.plantingCycleRepository = plantingCycleRepository;
+        this.harvestRecordRepository = harvestRecordRepository;
     }
 // Insert
     public String save(Grower body) {
@@ -66,6 +72,20 @@ public class GrowerService {
         }
         growerRepository.deleteById(id);
         return "Grower deleted successfully";
+    }
+// Delete all
+    @Transactional
+    public String deleteAll() {
+        harvestRecordRepository.deleteAll();
+        plantingCycleRepository.deleteAll();
+        for (Grower grower : growerRepository.findAll()) {
+            if (grower.getCropFamilies() != null) {
+                grower.getCropFamilies().clear();
+            }
+            growerRepository.save(grower);
+        }
+        growerRepository.deleteAll();
+        return "All growers deleted successfully";
     }
 // Search by cropfamilyName
     public List<Grower> findByCropFamilyName(String name) {

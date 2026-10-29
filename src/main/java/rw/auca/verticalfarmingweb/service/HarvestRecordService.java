@@ -1,6 +1,7 @@
 package rw.auca.verticalfarmingweb.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import rw.auca.verticalfarmingweb.entity.HarvestRecord;
 import rw.auca.verticalfarmingweb.entity.PlantingCycle;
 import rw.auca.verticalfarmingweb.enums.CycleStatus;
@@ -53,5 +54,11 @@ public class HarvestRecordService {
         }
         harvestRecordRepository.deleteById(id);
         return "Harvest record deleted successfully";
+    }
+//Delete all
+    @Transactional
+    public String deleteAll() {
+        harvestRecordRepository.deleteAll();
+        return "All harvest records deleted successfully";
     }
 }

@@ -82,4 +82,9 @@ public class CropBatchController {
         }
         return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
+
+    @DeleteMapping("/delete-all")
+    public ResponseEntity<String> deleteAll() {
+        return new ResponseEntity<>(cropBatchService.deleteAll(), HttpStatus.OK);
+    }
 }

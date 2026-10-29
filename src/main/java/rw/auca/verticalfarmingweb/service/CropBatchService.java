@@ -1,10 +1,13 @@
 package rw.auca.verticalfarmingweb.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import rw.auca.verticalfarmingweb.entity.CropBatch;
 import rw.auca.verticalfarmingweb.entity.Grower;
 import rw.auca.verticalfarmingweb.repository.CropBatchRepository;
 import rw.auca.verticalfarmingweb.repository.GrowerRepository;
+import rw.auca.verticalfarmingweb.repository.HarvestRecordRepository;
+import rw.auca.verticalfarmingweb.repository.PlantingCycleRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,10 +18,14 @@ public class CropBatchService {
 
     private final CropBatchRepository cropBatchRepository;
     private final GrowerRepository growerRepository;
+    private final HarvestRecordRepository harvestRecordRepository;
+    private final PlantingCycleRepository plantingCycleRepository;
 
-    public CropBatchService(CropBatchRepository cropBatchRepository, GrowerRepository growerRepository) {
+    public CropBatchService(CropBatchRepository cropBatchRepository, GrowerRepository growerRepository, HarvestRecordRepository harvestRecordRepository, PlantingCycleRepository plantingCycleRepository) {
         this.cropBatchRepository = cropBatchRepository;
         this.growerRepository = growerRepository;
+        this.harvestRecordRepository = harvestRecordRepository;
+        this.plantingCycleRepository = plantingCycleRepository;
     }
 //Insert
     public String save(CropBatch cropBatch) {
@@ -54,6 +61,14 @@ public class CropBatchService {
         }
         cropBatchRepository.deleteById(id);
         return "Crop batch deleted successfully";
+    }
+//Delete all
+    @Transactional
+    public String deleteAll() {
+        harvestRecordRepository.deleteAll();
+        plantingCycleRepository.deleteAll();
+        cropBatchRepository.deleteAll();
+        return "All crop batches deleted successfully";
     }
 //Search by name
     public List<CropBatch> findByCropName(String cropName) {

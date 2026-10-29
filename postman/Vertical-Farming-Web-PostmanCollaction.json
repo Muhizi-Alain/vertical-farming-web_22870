@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "93235ab8-6a85-41a1-8c9c-4a8dace1ecf7",
-    "name": "vertical-farming-web",
+    "name": "Vertical-Farming-Web-PostmanCollaction",
     "description": "Vertical Farming Web API (localhost:22870). Set collection variables after seeding via Env \u00b7 List IDs.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
@@ -837,6 +837,15 @@
                 "url": "{{baseUrl}}/api/crop-families/delete/{{badId}}",
                 "description": ""
               }
+            },
+            {
+              "name": "Delete all",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{baseUrl}}/api/crop-families/delete-all",
+                "description": "Deletes every crop family (grower links cleared first). Cleanup only."
+              }
             }
           ]
         },
@@ -914,6 +923,15 @@
                 "header": [],
                 "url": "{{baseUrl}}/api/grow-towers/delete/{{badId}}",
                 "description": ""
+              }
+            },
+            {
+              "name": "Delete all",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{baseUrl}}/api/grow-towers/delete-all",
+                "description": "Deletes every grow tower (clears grower tower references first). Cleanup only."
               }
             }
           ]
@@ -993,6 +1011,15 @@
                 "url": "{{baseUrl}}/api/growers/delete/{{badId}}",
                 "description": ""
               }
+            },
+            {
+              "name": "Delete all",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{baseUrl}}/api/growers/delete-all",
+                "description": "Deletes harvest records and planting cycles, then all growers. Cleanup only."
+              }
             }
           ]
         },
@@ -1071,6 +1098,15 @@
                 "url": "{{baseUrl}}/api/crop-batches/delete/{{badId}}",
                 "description": ""
               }
+            },
+            {
+              "name": "Delete all",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{baseUrl}}/api/crop-batches/delete-all",
+                "description": "Deletes harvest records, planting cycles, then all crop batches. Cleanup only."
+              }
             }
           ]
         },
@@ -1148,6 +1184,15 @@
                 "header": [],
                 "url": "{{baseUrl}}/api/planting-cycles/delete/{{badId}}",
                 "description": ""
+              }
+            },
+            {
+              "name": "Delete all",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{baseUrl}}/api/planting-cycles/delete-all",
+                "description": "Deletes all harvest records, then all planting cycles. Cleanup only."
               }
             }
           ]
@@ -1372,6 +1417,15 @@
           }
         },
         {
+          "name": "Delete all",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/harvest-records/delete-all",
+            "description": "Deletes every harvest record. Cleanup only."
+          }
+        },
+        {
           "name": "Delete cycle blocked",
           "request": {
             "method": "DELETE",
@@ -1401,6 +1455,65 @@
             "header": [],
             "url": "{{baseUrl}}/api/planting-cycles/cancel-day?growerId={{growerAlineId}}&date=2026-10-20",
             "description": "Run after other demos; marks non-HARVESTED cycles FAILED."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Delete all (full reset order)",
+      "item": [
+        {
+          "name": "1 \u00b7 Harvest records",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/harvest-records/delete-all",
+            "description": "Run 1\u20136 in order for a full DB reset without FK errors."
+          }
+        },
+        {
+          "name": "2 \u00b7 Planting cycles",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/planting-cycles/delete-all",
+            "description": ""
+          }
+        },
+        {
+          "name": "3 \u00b7 Growers",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/growers/delete-all",
+            "description": ""
+          }
+        },
+        {
+          "name": "4 \u00b7 Crop batches",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/crop-batches/delete-all",
+            "description": ""
+          }
+        },
+        {
+          "name": "5 \u00b7 Crop families",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/crop-families/delete-all",
+            "description": ""
+          }
+        },
+        {
+          "name": "6 \u00b7 Grow towers",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/grow-towers/delete-all",
+            "description": ""
           }
         }
       ]
